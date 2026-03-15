@@ -1,18 +1,16 @@
-document.addEventListener("DOMContentLoaded", function(){
+document.querySelectorAll("nav a").forEach(anchor => {
 
-const form = document.getElementById("contactForm");
-
-form.addEventListener("submit", function(e){
+anchor.addEventListener("click", function(e) {
 
 e.preventDefault();
 
-const name = document.getElementById("name").value;
-const email = document.getElementById("email").value;
-const message = document.getElementById("message").value;
+document.querySelector(this.getAttribute("href"))
 
-console.log(name,email,message);
+.scrollIntoView({
 
-alert("Message sent successfully");
+behavior: "smooth"
+
+});
 
 });
 
